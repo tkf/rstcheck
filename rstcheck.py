@@ -73,6 +73,7 @@ def rstflakes(file, report, normal):
             if level >= report:
                 # see: docutils.nodes.system_message
                 body = head(smsg.traverse(nodes.Text))
+                body = body.replace("\n", " ")
                 if 'Unknown directive type' in body:
                     continue
                 if 'Unknown interpreted text role' in body:
