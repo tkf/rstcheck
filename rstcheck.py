@@ -10,13 +10,6 @@ from docutils import nodes
 from docutils import io
 from docutils import utils
 
-try:
-    # these imports register directives/roles defined in sphinx
-    import sphinx.directives
-    import sphinx.roles
-except:
-    pass
-
 
 class CaptureStdIO(object):
 
