@@ -71,6 +71,10 @@ def rstflakes(file, report, normal):
                     continue
                 if 'Unknown interpreted text role' in body:
                     continue
+                if 'Substitution definition contains illegal element' in body:
+                    # there will be error message for the contents it
+                    # self so let's ignore it.
+                    continue
                 path = smsg.attributes['source']
                 line = smsg.get('line', '')
                 if level >= TYPE_TO_LEVEL['ERROR']:
